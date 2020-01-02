@@ -35,5 +35,11 @@ public class Program {
 		Seller newSeller = new Seller(null, "Greg Olson", "greg@gmail.com", new Date(), 4000.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Done! New ID inserted: " + newSeller.getId());
+		
+		System.out.println("\n==== TEST 5 - seller Update ====");
+		seller = sellerDao.findById(1);
+		seller.setName("Diane Kruger");
+		sellerDao.update(seller);
+		System.out.println("Updated registry");
 	}
 }
